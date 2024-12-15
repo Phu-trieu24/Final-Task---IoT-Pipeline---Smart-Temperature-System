@@ -49,3 +49,6 @@ _time:time                      | _value:float
 
 Since the data that we wrote to InfluxDB is retrivable, now adjust the server.mjs with the API endpoint ip-to-the-server/api/v1/data where we have the data from InfluxDB under JSON format.
 
+The API Endpoint: /api/v1/embed. This API endpoint listens to HTTP GET requests on the path /api/v1/embed. It expects a query parameter called value, which contains the value that we wish to store in the database.
+
+The API Endpoint: /api/v1/temp endpoint is a GET API designed to retrieve temperature data stored in the InfluxDB database. It queries data from a specific bucket, filters it for the desired measurement and field, and returns the results in a JSON format for easy use in our frontend visualizations.

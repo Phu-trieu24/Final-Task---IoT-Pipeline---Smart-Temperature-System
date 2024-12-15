@@ -36,8 +36,8 @@ Program explained from top to bottom
 3. Functions
     1. `read_temperature` - Convert raw unsigned 16-bit value to voltage scale 0 - Max voltage.
     2. `dlog` - Debug log. Similar to print, but the behaviour can be changed later.
-    3. `sendData` - Constructs and sends GET request containing data in query parameters
-    4. `connectWifi` - Sets Wifi Module to connect AP. Shows process and returns WLAN object
+    3. `sendData` - Constructs and sends data in HTTP get request containing data in query parameters,
+    4. `connectWifi` - This function connects Pico W to wireless AP(Access Point) Connection process is shown in console. After succesful connection, the function shows LAN IP(ifconfig) if debuggin is on.
     5. `main` - Completes rest of the initialization and starts routine (main-loop)
 
 ## Wiring schematic

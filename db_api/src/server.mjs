@@ -16,6 +16,8 @@ DB_WRITE_POINT.useDefaultTags({ app: "db_api" });
 const QUERY_API = DB_CLIENT.getQueryApi(ENV.INFLUX.ORG);
 // Endpoint - embed
 app.get("/api/v1/", (_, res) => res.sendStatus(200));
+
+// Endpoint - Write data to InfluxDB
 app.get("/api/v1/embed", async (req, res) => {
     try {
         const value = req.query.value;
@@ -38,9 +40,8 @@ app.get("/test", (req, res) => {
     console.log(req.query);
     res.send("received queryparams!");
 });
-// Enpoints - API V1
 
-// Enpoints - Write data point to InfluxDB
+// Enpoints - Data retrieval  data point from InfluxDB
 app.get("/api/v1/temp", async (req, res) => {
     const query = `
         from(bucket: "db_api")

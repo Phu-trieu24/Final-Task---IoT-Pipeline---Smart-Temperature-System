@@ -1,0 +1,18 @@
+[Unit]
+Description=Backend system for data delivery in IoT Pipeline
+After=network.target
+
+[Service]
+ExecStart=/home/azureuser/.nvm/versions/node/v23.1.0/bin/node /opt/db_api/src/server.mjs
+WorkingDirectory=/opt/db_api
+Restart=always
+RestartSec=10
+User=db_api_user
+Group=db_api_group
+EnvironmentFile=/opt/db_api/.env
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=db_api-service
+
+[Install]
+WantedBy=multi-user.target
